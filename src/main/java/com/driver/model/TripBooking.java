@@ -13,7 +13,7 @@ public class TripBooking{
     private String toLocation;
     private int distanceInKm;
     @Enumerated(value=EnumType.STRING)
-    private TripStatus TripStatus;
+    private TripStatus status;
     private int bill;
 
     @ManyToOne
@@ -23,8 +23,21 @@ public class TripBooking{
     @ManyToOne
     @JoinColumn
     private Customer customer;
+    public TripBooking(){
+
+    }
 
 
+    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm, TripStatus tripStatus, int bill, Driver driver, Customer customer) {
+        this.tripBookingId = tripBookingId;
+        this.fromLocation = fromLocation;
+        this.toLocation = toLocation;
+        this.distanceInKm = distanceInKm;
+        this.status = tripStatus;
+        this.bill = bill;
+        this.driver = driver;
+        this.customer = customer;
+    }
 
 
 
@@ -37,21 +50,7 @@ public class TripBooking{
         //this.bill = bill;
     }
 
-    public Driver getDriver() {
-        return driver;
-    }
 
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
 
     public int getTripBookingId() {
         return tripBookingId;
@@ -85,13 +84,7 @@ public class TripBooking{
         this.distanceInKm = distanceInKm;
     }
 
-    public com.driver.model.TripStatus getTripStatus() {
-        return TripStatus;
-    }
 
-    public void setTripStatus(com.driver.model.TripStatus tripStatus) {
-        TripStatus = tripStatus;
-    }
 
     public int getBill() {
         return bill;
@@ -100,4 +93,29 @@ public class TripBooking{
     public void setBill(int bill) {
         this.bill = bill;
     }
+
+    public TripStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TripStatus status) {
+        this.status = status;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 }

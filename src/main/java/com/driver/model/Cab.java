@@ -12,7 +12,7 @@ public class Cab {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int Id;
 
-    private int ratePerKm;
+    private int perKmRate;
     private boolean available;
 
     @OneToOne
@@ -31,19 +31,27 @@ public class Cab {
         Id = id;
     }
 
-    public int getRatePerKm() {
-        return ratePerKm;
+    public int getPerKmRate() {
+        return perKmRate;
     }
 
-    public void setRatePerKm(int ratePerKm) {
-        this.ratePerKm = ratePerKm;
+    public void setPerKmRate(int perKmRate) {
+        this.perKmRate = perKmRate;
     }
 
-    public boolean isAvailable() {
-        return available;
+    public Driver getDriver() {
+        return driver;
     }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+    public boolean getAvailable() {
+        return available;
     }
 }
