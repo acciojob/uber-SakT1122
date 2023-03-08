@@ -10,39 +10,39 @@ public class Customer{
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int custometrId;
-    private String mobNo;
+    private int customerId;
+    private String mobile;
     private String password;
 
     @OneToMany(mappedBy = "customer", cascade=CascadeType.ALL)
-    List<TripBooking> tripBookings =new ArrayList<>();
+    List<TripBooking> tripBookingList =new ArrayList<>();
 
     public List<TripBooking> getTripBookings() {
-        return tripBookings;
+        return tripBookingList;
     }
 
     public void setTripBookings(List<TripBooking> tripBookings) {
-        this.tripBookings = tripBookings;
+        this.tripBookingList = tripBookings;
     }
 
     public Customer(){
 
     }
 
-    public int getCustometrId() {
-        return custometrId;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustometrId(int custometrId) {
-        this.custometrId = custometrId;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public String getMobNo() {
-        return mobNo;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setMobNo(String mobNo) {
-        this.mobNo = mobNo;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getPassword() {
@@ -51,5 +51,13 @@ public class Customer{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
     }
 }

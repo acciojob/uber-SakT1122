@@ -34,8 +34,8 @@ public class CustomerServiceImpl implements CustomerService {
 	public void register(Customer customer) {
 		//Save the customer in database
 		Customer customer1=new Customer();
-		customer1.setCustometrId(customer.getCustometrId());
-		customer1.setMobNo(customer.getMobNo());
+		customer1.setCustomerId(customer.getCustomerId());
+		customer1.setMobile(customer.getMobile());
 		customer1.setPassword(customer.getPassword());
 		customer1.setTripBookings(customer.getTripBookings());
 		customerRepository2.save(customer1);
