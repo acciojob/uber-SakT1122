@@ -81,7 +81,7 @@ public class CustomerServiceImpl implements CustomerService {
 		List<TripBooking> lst=cust.getTripBookings();
 
 		//Creating nwe tripBooking
-		TripBooking trip=new TripBooking(fromLocation,toLocation,distanceInKm);
+		TripBooking trip=new TripBooking(fromLocation,toLocation,distanceInKm,cust,0);
 		//Setting trip details
 		trip.setStatus(TripStatus.CONFIRMED);
 		trip.setDriver(wanted);
